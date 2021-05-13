@@ -6,7 +6,6 @@ public class TestaValores {
         segundo = primeiro;
         primeiro = 10;
 
-        
         // quanto vale o segundo?
 
         System.out.println(segundo);

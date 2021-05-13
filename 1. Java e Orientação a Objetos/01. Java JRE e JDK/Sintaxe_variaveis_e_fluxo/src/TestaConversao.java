@@ -3,6 +3,7 @@ public class TestaConversao {
     public static void main(String[] args) {
 
         float pontoFlutuante = 3.14f;
+        System.out.println(pontoFlutuante);
 
         double salario = 1270.50;
         int valor = (int) salario;

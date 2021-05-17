@@ -10,8 +10,8 @@ public class TesteContas {
 
         cc.transfere(10.0, cp);
 
-        System.out.println("CC" + cc.getSaldo());
-        System.out.println("CP" + cp.getSaldo());
+        System.out.println("CC: " + cc.getSaldo());
+        System.out.println("CP: " + cp.getSaldo());
     }
 
 }

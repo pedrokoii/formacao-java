@@ -2,7 +2,11 @@ public class Fluxo {
 
     public static void main(String[] args) {
         System.out.println("Ini do main"); //adicionar breakpoint
-        metodo1();
+        try {
+            metodo1();
+        } catch(ArithmeticException ex) {
+            System.out.println("ArithmeticException");
+        }
         System.out.println("Fim do main");
     }
     

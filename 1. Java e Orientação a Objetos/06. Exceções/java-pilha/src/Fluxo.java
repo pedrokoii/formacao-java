@@ -1,10 +1,10 @@
 public class Fluxo {
 
     public static void main(String[] args) {
-        System.out.println("Ini do main"); //adicionar breakpoint
+        System.out.println("Ini do main");
         try {
             metodo1();
-        } catch(ArithmeticException | NullPointerException ex) {
+        } catch(ArithmeticException | NullPointerException ex){
             String msg = ex.getMessage();
             System.out.println("Exception " + msg);
             ex.printStackTrace();
@@ -13,19 +13,16 @@ public class Fluxo {
     }
     
     private static void metodo1() {
-        System.out.println("Ini do metodo1"); //adicionar breakpoint
+        System.out.println("Ini do metodo1");
         metodo2();
         System.out.println("Fim do metodo1");
     }
     
     private static void metodo2() {
-        System.out.println("Ini do metodo2"); //adicionar breakpoint
-        for(int i = 1; i <= 5; i++) {
-            System.out.println(i);
-            int a = i / 0; //insere exceção aritmética
-            //Conta c = null;
-            //c.deposita();
-        }
-        System.out.println("Fim do metodo2");
+        System.out.println("Ini do metodo2");
+        
+        throw new ArithmeticException("deu errado");
+
+        //System.out.println("Fim do metodo2");
     }
 }

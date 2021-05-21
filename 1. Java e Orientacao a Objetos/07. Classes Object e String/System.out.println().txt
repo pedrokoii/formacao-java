@@ -1,0 +1,11 @@
+
+    System.out.println();
+
+System
+    tipo: Classe, java.lang, public
+
+out
+    atributo, public, referencia, static
+
+println()
+    metodo, public, non-static, sobrecarga, não joga exceções 'checked'

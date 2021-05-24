@@ -14,8 +14,6 @@ public class TesteArrayListEquals {
         // boolean igual = cc1.ehIgual(cc2);
         // System.out.println(igual);
 
-
-
         //Generics
         ArrayList<Conta> lista = new ArrayList<Conta>();
 

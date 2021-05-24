@@ -3,7 +3,7 @@ package br.com.bytebank.banco.test.util;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Teste {
+public class TesteWrapperInteger {
     
     public static void main(String[] args) {
 
@@ -14,9 +14,7 @@ public class Teste {
 
         int idade = 29;
         Integer idadeRef = Integer.valueOf(idade); //Autoboxing
-        System.out.println(idadeRef.doubleValue());
-        int valor = idadeRef.intValue(); //Unboxing
-        System.out.println(valor);
+        System.out.println(idadeRef.intValue());//Unboxing 
 
         String s = "10";
         //Integer numero = Integer.valueOf(s);

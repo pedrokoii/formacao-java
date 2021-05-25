@@ -1,6 +1,7 @@
 package br.com.bytebank.banco.test.util;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -44,23 +45,25 @@ public class Teste {
         lista.add(cc4);
 
         for (Conta conta : lista) {
-            System.out.println(conta);
+            System.out.println(conta + ", Titular: " + conta.getTitular().getNome());
         }
         System.out.println("-------------");
 
-        NumeroDaContaComparator numeroComparator = new NumeroDaContaComparator();
-        lista.sort(numeroComparator);
-
+        Collections.sort(lista, new NumeroDaContaComparator());
         for (Conta conta : lista) {
-            System.out.println(conta);
+            System.out.println(conta + ", Titular: " + conta.getTitular().getNome());
         }
         System.out.println("-------------");
 
-        TitularDaContaComparator titularComparator = new TitularDaContaComparator();
-        lista.sort(titularComparator);
-
+        lista.sort(new TitularDaContaComparator());
         for (Conta conta : lista) {
-            System.out.println(conta + ", " + conta.getTitular().getNome());
+            System.out.println(conta + ", Titular: " + conta.getTitular().getNome());
+        }
+        System.out.println("-------------");
+
+        Collections.sort(lista);
+        for (Conta conta : lista) {
+            System.out.println(conta + ", Titular: " + conta.getTitular().getNome());
         }
 
     }
@@ -84,16 +87,19 @@ class NumeroDaContaComparator implements Comparator<Conta> {
 
     @Override
     public int compare(Conta c1, Conta c2) {
-        
-        if(c1.getNumero() < c2.getNumero()) {
-            return -1;
-        }
+        return Integer.compare(c1.getNumero(), c2.getNumero());
 
-        if(c1.getNumero() > c2.getNumero()) {
-            return 1;
-        }
+        // return c1.getNumero() - c2.getNumero();
 
-        return 0;
+        // if(c1.getNumero() < c2.getNumero()) {
+        //     return -1;
+        // }
+
+        // if(c1.getNumero() > c2.getNumero()) {
+        //     return 1;
+        // }
+
+        // return 0;
     }
     
 }

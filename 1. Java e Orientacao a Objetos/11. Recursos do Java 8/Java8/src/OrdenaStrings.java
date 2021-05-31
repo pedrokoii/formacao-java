@@ -1,6 +1,7 @@
 import java.util.ArrayList;
-import java.util.Comparator;
+import static java.util.Comparator.comparing;
 import java.util.List;
+
 // import java.util.function.Function;
 
 public class OrdenaStrings {
@@ -12,7 +13,7 @@ public class OrdenaStrings {
         palavras.add("editora casa do codigo");
         palavras.add("caelum");
 
-        palavras.sort(Comparator.comparing(String::length));
+        palavras.sort(comparing(String::length));
         palavras.forEach(System.out::println);
     }
 

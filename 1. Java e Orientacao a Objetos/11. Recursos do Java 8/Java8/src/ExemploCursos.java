@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.OptionalDouble;
+import java.util.stream.Collectors;
 
 class Curso {
     private String nome;
@@ -38,12 +40,39 @@ public class ExemploCursos {
         //     .filter(c -> c.getAlunos() >= 100)
         //     .forEach(c -> System.out.println(c.getNome()));
         
-        int sum = cursos.stream()
-            .filter(c -> c.getAlunos() >= 100)
-            .mapToInt(Curso::getAlunos)
-            .sum();
+        // OptionalDouble media = cursos.stream()
+        //     .filter(c -> c.getAlunos() >= 100)
+        //     .mapToInt(Curso::getAlunos)
+        //     .average();
         
-        System.out.println(sum);
+        //System.out.println(media);
+
+        // cursos.stream()
+        //     .filter(c -> c.getAlunos() >= 1000)
+        //     .findAny()
+        //     .ifPresent(c -> System.out.println(c.getNome()));
+
+        // List<Curso> resultado = cursos.stream()
+        //     .filter(c -> c.getAlunos() >= 100)
+        //     .collect(Collectors.toList());
+
+        // cursos.stream()
+        //     .forEach(c -> System.out.println(c.getNome()));
+
+        // cursos.parallelStream()
+        cursos.stream()
+            .filter(c -> c.getAlunos() >= 100)
+            .collect(Collectors.toMap(
+                    c -> c.getNome(),
+                    c -> c.getAlunos()))
+            .forEach((nome, alunos) -> System.out.println(nome + " tem " + alunos + " alunos"));
+
+        OptionalDouble media = cursos.stream()
+            .mapToInt(Curso::getAlunos)
+            .average();
+
+        System.out.println("A media de alunos entre os cursos eh: " + media.getAsDouble());
+        
     }
 
 }

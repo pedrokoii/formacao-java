@@ -7,4 +7,5 @@
   </classpathentry>
   <classpathentry kind="src" path="src"/>
   <classpathentry kind="output" path="bin"/>
+  <classpathentry kind="lib" path="D:\Program Files\Java\junit\junit-platform-console-standalone-1.7.0.jar"/>
 </classpath>
